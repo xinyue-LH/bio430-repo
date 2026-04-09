@@ -1,0 +1,113 @@
+---
+title: "Mock Manuscript"
+author: "xinyue"
+date: "2026-02-13"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(tidyverse)
+library(skimr)
+library(knitr)
+library(janitor)
+library(ggmosaic)
+library(ggExtra)
+library(here)
+library(readxl)
+```
+
+In this manuscript I have created tables and graphs to compair skull sizes between male and female grizzly bears in BC. this was downloaded from the data "Compulsory Inspection Data 1900 to 2023-24" from the British Columbia database, linked in the reference.
+
+```{r dowloading data, warning= FALSE, echo=FALSE}
+data<-read_excel("C:/Users/Grump/OneDrive/Documents/UBC/BIOL/bio 430 repro/turorial_work/my_project/00_rawdata/rawdata_original/compulsory-inspection-data-1900-to-2023-24.xlsx", sheet = "Old CI System")
+View(data)
+```
+
+The original data becomes filtered to include only Grizzly Bear related data, which will be the data set used for the following graphs and tables.
+
+```{r filtering, echo=FALSE}
+grizzly_data <- data %>% 
+  dplyr::filter(Species == "BEAG")
+View(grizzly_data)
+```
+
+```{r new csv file, echo=FALSE}
+write_csv(grizzly_data, "C:/Users/Grump/OneDrive/Documents/UBC/BIOL/bio 430 repro/turorial_work/my_project/00_rawdata/outdata/grizzly_data.csv")
+```
+
+```{r cleaning data, echo=FALSE}
+grizzly_data_drop_skull <- grizzly_data %>%
+  drop_na(`Skull Length`, `Skull Width`)
+View(grizzly_data_drop_skull)
+```
+
+Here is a Skim overview of the Grizzly Bears Data.
+
+```{r skim, echo=FALSE}
+grizzly_data_drop_skull %>%
+  skim_without_charts()
+```
+
+Here is a comparison of two scatter plot of Grizzly Bear skull size by sexes, this data shows only the skulls reported in Region 4, which represents bears found in the Kootenay Area of British Columbia, Canada.
+
+```{r graphs, warning=FALSE, echo=FALSE, fig.cap= "Grizzly Skulls Comparison of Bears found in Kootenay Area from 1900-2023. Female bears n=3280, Male bears n=6489. Excluding from Dataset bear skulls catagorized as U=Unknown. In Females Mean Length=319mm, Mean Width=179mm. In Males Mean Length=346mm, Mean Width=197mm. Male Grizzly skulls on average are larger than females in both length and width."}
+grizzly_data_drop_skull %>% 
+  filter(Region == "4") %>%
+  filter(Sex != "U") %>% 
+ggplot(aes(x = `Skull Length`, y = `Skull Width`)) +
+  geom_point(shape = 1) +
+  facet_grid(~ Sex) +
+  xlab("Skull Length (mm)") +
+  ylab("Skull Width (mm)") +
+ labs(title = "Grizzly Skulls Comparison of Bears found in Kootenay Area from 1900-2023") +
+  theme_bw()
+```
+
+```{r summary length, echo=FALSE}
+grizzly.descriptors.length <- grizzly_data_drop_skull %>%
+  group_by(Sex) %>%
+  summarise( 
+  Mean = mean(`Skull Length`, na.rm = T),
+  SD = sd(`Skull Length`, na.rm = T),
+  Median = median(`Skull Length`, na.rm = T),
+  InterQR = IQR(`Skull Length`, na.rm = T),
+  Count = n() - naniar::n_miss(`Skull Length`),
+  Count_NA = naniar::n_miss(`Skull Length`))
+View(grizzly.descriptors.length)
+```
+
+```{r summary width, echo=FALSE}
+grizzly.descriptors.width <- grizzly_data_drop_skull %>%
+  group_by(Sex) %>%
+  summarise( 
+  Mean = mean(`Skull Width`, na.rm = T),
+  SD = sd(`Skull Width`, na.rm = T),
+  Median = median(`Skull Width`, na.rm = T),
+  InterQR = IQR(`Skull Width`, na.rm = T),
+  Count = n() - naniar::n_miss(`Skull Width`),
+  Count_NA = naniar::n_miss(`Skull Width`))
+View(grizzly.descriptors.width)
+```
+
+## Article
+
+[@fu2024]
+
+[@hacioglu2024]
+
+[@compulso]
+
+[@forests]
+
+## References
+
+::: {#refs}
+:::
