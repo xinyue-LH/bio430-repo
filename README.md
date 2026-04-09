@@ -1,2 +1,2 @@
 # bio430-repo
-Try again for simplicity
+mini project for bio 430, final version of this project.
