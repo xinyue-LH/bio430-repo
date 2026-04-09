@@ -1,8 +1,16 @@
-# README DRAFT
+# README
 
 ## Description
 
-Biol 430 Specalized Topics, 'Reproducibility in Scientific Research'.Mini Project using public accessible data.
+For my class Biol 430 Specialized Topics, 'Reproducibility in Scientific Research', UBCO. This is a Mini Project using public accessible data, to create a mock manuscript from publicity available data and set up a study with reproducible steps.
+
+In this project I have created tables and graphs to compare skull sizes between male and female grizzly bears in BC. This was downloaded from the data "Compulsory Inspection Data 1900 to 2023-24" from the British Columbia database.
+
+This project is composed of a Manuscript, written on RStudio and linked to Github and OpenScience Forum. Sources also linked to a Zoetro.
+
+This project includes the original data in Excel, a Data Directory in Excel, and public README file associated with the original data.
+
+OpenScience Forum linked to Github, including a Data Management Plan, and Pre-Registration in the OSF files.
 
 ## Date of Creation
 
@@ -18,20 +26,11 @@ Overseer
 
 Data Used: Compulsory Inspection Data 1900 to 2023-24 published by Wildlife to gov.bc dataset list
 
-link to data: <https://catalogue.data.gov.bc.ca/dataset/45711667-7878-4d86-8b5e-d0be5997dd16>
+Link to data: <https://catalogue.data.gov.bc.ca/dataset/45711667-7878-4d86-8b5e-d0be5997dd16>
 
 ## License
 
-Specify data usage license.
-testin from git
-## File Overview
-
-Data Used is "Compulsory Inspection Data 1900 to 2023-24" This data package contains the collected inspection of animals reported by hunters within BC as mandated by BC Wildlife Act, in the form of excel of the raw data and separately the field definitions and supplementary link for more information.
-Provided with all data, data directory and readme file
-downloaded 01/23/26 
-## File Format
-
-Description of file formats used and why.
+Data Used is "Compulsory Inspection Data 1900 to 2023-24" This data package contains the collected inspection of animals reported by hunters within BC as mandated by BC Wildlife Act, in the form of excel of the raw data and separately the field definitions and supplementary link for more information. Provided with all data, data directory and readme file downloaded 01/23/26.
 
 ## Data Collection
 
@@ -39,8 +38,8 @@ Collected by reports from hunters in BC, Canada.
 
 ## Data Processing
 
-Describe any processing, cleaning, or transformations.
+The data was filtered through RStudio, and all graphs and tables were also created by RStudio.
 
 ## Software and Dependencies
 
-RSudio (2025.05.1+513), Zotero, Github, OSF.
+RSudio (2025.05.1+513), Zotero, Github, OpenScience Forum.
