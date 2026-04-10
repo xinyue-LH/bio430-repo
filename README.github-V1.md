@@ -32,7 +32,7 @@ Link to data: <https://catalogue.data.gov.bc.ca/dataset/45711667-7878-4d86-8b5e-
 
 This project is licensed under the MIT License. It is free to use, modify, and distribute this software for any purpose, as long as the original copyright and license notice are included.
 
-The Data Used is "Compulsory Inspection Data 1900 to 2023-24" This data package contains the collected inspection of animals reported by hunters within BC as mandated by BC Wildlife Act, collected by reports from hunters in BC, Canada.
+The data used is under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
 
 ## Data Collection
 
