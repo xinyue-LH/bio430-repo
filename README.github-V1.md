@@ -32,11 +32,11 @@ Link to data: <https://catalogue.data.gov.bc.ca/dataset/45711667-7878-4d86-8b5e-
 
 This project is licensed under the MIT License.You are free to use, modify, and distribute this software for any purpose, as long as the original copyright and license notice are included.
 
-The Data Used is "Compulsory Inspection Data 1900 to 2023-24" This data package contains the collected inspection of animals reported by hunters within BC as mandated by BC Wildlife Act, in the form of excel of the raw data and separately the field definitions and supplementary link for more information. Provided with all data, data directory and readme file downloaded 01/23/26.
+The Data Used is "Compulsory Inspection Data 1900 to 2023-24" This data package contains the collected inspection of animals reported by hunters within BC as mandated by BC Wildlife Act, collected by reports from hunters in BC, Canada.
 
 ## Data Collection
 
-The Data Used is "Compulsory Inspection Data 1900 to 2023-24" This data package contains the collected inspection of animals reported by hunters within BC as mandated by BC Wildlife Act, collected by reports from hunters in BC, Canada.
+The Data Used is "Compulsory Inspection Data 1900 to 2023-24" This data package contains the collected inspection of animals reported by hunters within BC as mandated by BC Wildlife Act, in the form of excel of the raw data and separately the field definitions and supplementary link for more information. Provided with all data, data directory and readme file downloaded 01/23/26.
 
 When running the analysis each data frame should be added to RStudio Environment.
 
